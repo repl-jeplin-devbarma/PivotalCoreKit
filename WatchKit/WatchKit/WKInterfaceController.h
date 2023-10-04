@@ -53,7 +53,7 @@ typedef NS_ENUM(NSInteger, WKAlertControllerStyle) {
 - (void)handleActionWithIdentifier:(nullable NSString *)identifier
              forRemoteNotification:(NSDictionary *)remoteNotification;
 - (void)handleActionWithIdentifier:(nullable NSString *)identifier
-              forLocalNotification:(UILocalNotification *)localNotification;
+              forLocalNotification:(UNNotification *)localNotification;
 - (void)handleUserActivity:(nullable NSDictionary *)userInfo;
 
 - (void)setTitle:(NSString *)title;
@@ -98,7 +98,7 @@ typedef NS_ENUM(NSInteger, WKAlertControllerStyle) {
 //- (instancetype)init;
 - (void)didReceiveRemoteNotification:(NSDictionary *)remoteNotification
                       withCompletion:(void(^)(WKUserNotificationInterfaceType interface)) completionHandler;
-- (void)didReceiveLocalNotification:(UILocalNotification *)localNotification
+- (void)didReceiveLocalNotification:(UNNotification *)localNotification
                      withCompletion:(void(^)(WKUserNotificationInterfaceType interface)) completionHandler;
 
 @end

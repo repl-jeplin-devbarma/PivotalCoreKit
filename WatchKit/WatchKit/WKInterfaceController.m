@@ -11,7 +11,7 @@
 - (void)handleActionWithIdentifier:(NSString *)identifier
              forRemoteNotification:(NSDictionary *)remoteNotification NS_REQUIRES_SUPER;
 - (void)handleActionWithIdentifier:(NSString *)identifier
-              forLocalNotification:(UILocalNotification *)localNotification NS_REQUIRES_SUPER;
+              forLocalNotification:(UNNotification *)localNotification NS_REQUIRES_SUPER;
 - (void)handleUserActivity:(NSDictionary *)userActivity NS_REQUIRES_SUPER;
 
 - (void)pushControllerWithName:(NSString *)name context:(id)context NS_REQUIRES_SUPER;
@@ -47,7 +47,7 @@
 
 - (void)didReceiveRemoteNotification:(NSDictionary *)remoteNotification
                       withCompletion:(void(^)(WKUserNotificationInterfaceType interface)) completionHandler NS_REQUIRES_SUPER;
-- (void)didReceiveLocalNotification:(UILocalNotification *)localNotification
+- (void)didReceiveLocalNotification:(UNNotification *)localNotification
                      withCompletion:(void(^)(WKUserNotificationInterfaceType interface)) completionHandler NS_REQUIRES_SUPER;
 
 - (void)presentAlertControllerWithTitle:(NSString *)title message:(NSString *)message preferredStyle:(WKAlertControllerStyle)preferredStyle actions:(NSArray <WKAlertAction *>*)actions NS_REQUIRES_SUPER;
@@ -97,7 +97,7 @@
 }
 
 - (void)handleActionWithIdentifier:(NSString *)identifier
-              forLocalNotification:(UILocalNotification *)localNotification
+              forLocalNotification:(UNNotification *)localNotification
 {
     [super handleActionWithIdentifier:identifier forLocalNotification:localNotification];
 }
@@ -233,7 +233,7 @@
     [super didReceiveRemoteNotification:remoteNotification withCompletion:completionHandler];
 }
 
-- (void)didReceiveLocalNotification:(UILocalNotification *)localNotification
+- (void)didReceiveLocalNotification:(UNNotification *)localNotification
                       withCompletion:(void(^)(WKUserNotificationInterfaceType interface)) completionHandler
 {
     self.lastCompletionBlock = completionHandler;
