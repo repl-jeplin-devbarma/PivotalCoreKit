@@ -2,7 +2,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void (^PCKTableViewRowActionHandler)(UITableViewRowAction * __nonnull action, NSIndexPath * __nonnull indexPath);
+typedef void (^PCKTableViewRowActionHandler)(UIContextualAction * __nonnull action, NSIndexPath * __nonnull indexPath);
 
 @interface UITableViewRowAction (Spec)
 
